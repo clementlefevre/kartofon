@@ -1,4 +1,4 @@
-##Kartophon for Raspberry PI
+# Kartophon for Raspberry PI
 
 Using KKmoon IC  14443A Card Reader USB 13.56MHZ RFID build a small mp3 player that play tunes when a rfid card is read.
 
@@ -9,12 +9,12 @@ Using KKmoon IC  14443A Card Reader USB 13.56MHZ RFID build a small mp3 player t
 - `defaults.pcm.card 1`
 
 - `sudo nano /boot/config.txt`
-- `dtparam=audio=of` # disable the internal PCM Audio Jack output
+- `dtparam=audio=off` # disable the internal PCM Audio Jack output
 
 
 ### RFID USB Card reader 
-- Ãcheck the output of our folder content `/dev/input/by-id` and note the complete name of your RFID USB device
--  in `devtest.py` , replace the `device = InputDevice('/dev/input/by-id/usb-13ba_Barcode_Reader-event-kbd')` with the value found before
+- check the output of our folder content `/dev/input/by-id` and note the complete name of your RFID USB device
+- in `devtest.py` , replace the `device = InputDevice('/dev/input/by-id/usb-13ba_Barcode_Reader-event-kbd')` with the value found before
 
 
 ### Start Kartofon on Boot :
