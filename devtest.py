@@ -21,10 +21,10 @@ def read_titles():
         line = line.replace('\n','')
         if len(line)>0:
             k, v = line.strip().split(' ')
-            if k.strip() not in TITLES :
-                TITLES[k.strip()] = [v.strip()]
-            else :
-                TITLES[k.strip()].append(v.strip())
+            #if k.strip() not in TITLES :
+            TITLES[k.strip()] = v.strip()
+            #else :
+                #TITLES[k.strip()].append(v.strip())
 
     f.close()
     return TITLES
@@ -47,9 +47,9 @@ def play_file(player, filename):
 
     print("start playing", filename)
     player.play()
-    time.sleep(1.5)
-    duration = player.get_length() / 1000
-    time.sleep(duration) 
+    #time.sleep(1.5)
+    #duration = player.get_length() / 1000
+    #time.sleep(duration) 
 
 def read_rfid(device):
 	stri=''
@@ -73,6 +73,6 @@ while True :
         player.stop()
     if (RFID in TITLES.keys()):
         print(TITLES[RFID])
-        for file in TITLES[RFID]:
-            play_file(player, file)
+        #for file in TITLES[RFID]:
+        play_file(player, TITLES[RFID])
 
